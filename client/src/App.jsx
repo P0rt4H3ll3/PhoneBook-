@@ -4,7 +4,7 @@ import SearchPersons from "./components/SearchPerson";
 import AllEntries from "./components/AllEntries";
 import { Container } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { colors } from "@mui/material";
+import { colors, Stack } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import ToggleButton from "./components/ToggleButton";
 
@@ -75,8 +75,10 @@ const App = () => {
         <ThemeProvider theme={theme}>
           <CssBaseline>
             <Container>
-              <h1>Phonebook</h1>
-              <ToggleButton />
+              <Stack direction="row" spacing={50}>
+                <h1>Phonebook</h1>
+                <ToggleButton />
+              </Stack>
               <SearchPersons
                 searchName={searchName}
                 handleChange={handleChange}

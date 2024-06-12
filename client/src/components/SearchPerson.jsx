@@ -35,7 +35,7 @@ const SearchPersons = ({ searchName, handleChange }) => {
   return (
     <div>
       <Stack spacing={4}>
-        <Stack direction="row" spacing={15}>
+        <Stack direction="row" spacing={1}>
           <TextField
             label="Search"
             variant="filled"
