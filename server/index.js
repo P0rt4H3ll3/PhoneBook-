@@ -2,8 +2,8 @@ import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import typeDefs from "./graphql/schema.js";
 import Query from "./graphql/resolvers/Query.js";
-import db from "./database/telefonbuch.json" assert { type: "json" };
-import { v4 as uuidv4 } from "uuid";
+import db from "./database/telefonbuch.json" assert { type: "json" }; // without assert {....} does not work.. dont know why
+import { v4 as uuidv4 } from "uuid"; // needed to generat unique ids
 
 //
 //server setup

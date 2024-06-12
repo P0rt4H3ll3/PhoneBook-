@@ -1,5 +1,7 @@
 import { gql } from "apollo-server";
-
+//
+//typedefinitions how the data gets represented ?
+//
 const typeDefs = gql`
   type Person {
     id: ID!
@@ -12,5 +14,5 @@ const typeDefs = gql`
     person(name: String): [Person!]
   }
 `;
-//type Query is the entry point for the user
+
 export default typeDefs;

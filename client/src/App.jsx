@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SearchPersons from "./components/SearchPerson";
 import AllEntries from "./components/AllEntries";
-//import { Container } from "@mui/material";
+import { Container } from "@mui/material";
 
 const App = () => {
   const [searchName, setSearchName] = useState("");
@@ -12,9 +12,11 @@ const App = () => {
 
   return (
     <>
-      <h1>Phonebook</h1>
-      <SearchPersons searchName={searchName} handleChange={handleChange} />
-      <AllEntries searchName={searchName} />
+      <Container>
+        <h1>Phonebook</h1>
+        <SearchPersons searchName={searchName} handleChange={handleChange} />
+        <AllEntries searchName={searchName} />
+      </Container>
     </>
   );
 };
