@@ -2,15 +2,15 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import ToggleButton from "./ToggleButton";
-import { Stack, useTheme } from "@mui/material/";
+import { useTheme } from "@mui/material/";
 
 const Header = () => {
   const theme = useTheme();
 
   return (
-    <Stack>
+    <>
       <AppBar
-        position="static"
+        position="sticky"
         style={
           theme.palette.mode === "dark"
             ? { backgroundColor: "#212121", color: "white" }
@@ -24,7 +24,7 @@ const Header = () => {
           <ToggleButton />
         </Toolbar>
       </AppBar>
-    </Stack>
+    </>
   );
 };
 

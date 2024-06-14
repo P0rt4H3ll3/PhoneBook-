@@ -82,7 +82,13 @@ const App = () => {
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
           <CssBaseline>
-            <Container>
+            <Container
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                flexWrap: "wrap",
+              }}
+            >
               <Header />
               <SearchPersons
                 searchName={searchName}

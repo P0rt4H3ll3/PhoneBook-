@@ -34,9 +34,10 @@ const SearchPersons = ({ searchName, handleChange }) => {
 
   return (
     <div>
-      <Stack spacing={2}>
+      <>
         <Stack direction="row" spacing={1}>
           <TextField
+            position="sticky"
             label="Search"
             variant="filled"
             value={searchName}
@@ -46,10 +47,11 @@ const SearchPersons = ({ searchName, handleChange }) => {
             fullWidth
           />
         </Stack>
-      </Stack>
+      </>
       <Stack>
         <BasicAlerts resultSearchPersons={resultSearchPersons} />
       </Stack>
+      <Stack />
       <TableContainer component={Paper}>
         <Table>
           <TableBody>
