@@ -3,8 +3,9 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import ToggleButton from "./ToggleButton";
 import { useTheme } from "@mui/material/";
+import SearchPersons from "./SearchPerson";
 
-const Header = () => {
+const Header = ({ searchName, handleChange }) => {
   const theme = useTheme();
 
   return (
@@ -23,6 +24,7 @@ const Header = () => {
           </Typography>
           <ToggleButton />
         </Toolbar>
+        <SearchPersons searchName={searchName} handleChange={handleChange} />
       </AppBar>
     </>
   );

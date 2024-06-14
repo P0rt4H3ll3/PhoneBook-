@@ -89,11 +89,7 @@ const App = () => {
                 flexWrap: "wrap",
               }}
             >
-              <Header />
-              <SearchPersons
-                searchName={searchName}
-                handleChange={handleChange}
-              />
+              <Header searchName={searchName} handleChange={handleChange} />
               <AllEntries searchName={searchName} />
             </Container>
           </CssBaseline>
