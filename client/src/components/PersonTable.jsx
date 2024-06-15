@@ -6,6 +6,7 @@ import {
   TableRow,
   Paper,
 } from "@mui/material";
+import BasicAlert from "./BasicAlert";
 
 const PersonTable = ({ resultSearchPersons }) => {
   //
@@ -15,7 +16,7 @@ const PersonTable = ({ resultSearchPersons }) => {
 
   return (
     <>
-      <BasicAlerts resultSearchPersons={resultSearchPersons} />
+      <BasicAlert resultSearchPersons={resultSearchPersons} />
       <TableContainer component={Paper} position="static">
         <Table
           role="Content table"

@@ -5,7 +5,7 @@ import ToggleButton from "./ToggleButton";
 import { useTheme } from "@mui/material/";
 import SearchField from "./Searchfield";
 
-const Header = ({ searchName, handleChange }) => {
+const Header = ({ searchName, handleChange, resultSearchPerson }) => {
   const theme = useTheme();
 
   return (
@@ -34,6 +34,7 @@ const Header = ({ searchName, handleChange }) => {
         <SearchField
           searchName={searchName}
           handleChange={handleChange}
+          resultSearchPerson={resultSearchPerson}
           aria-label="search field"
         />
       </AppBar>

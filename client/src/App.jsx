@@ -7,9 +7,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { colors } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import { gql, useQuery } from "@apollo/client";
-
-//import Header from "./components/Header";
-import SearchField from "./components/Searchfield";
+import Header from "./components/Header";
 
 export const ColorModeContext = React.createContext({
   //Context provides a way to pass data through the component tree without having to pass props down manually at every level.
@@ -101,8 +99,7 @@ const App = () => {
         <ThemeProvider theme={theme}>
           <CssBaseline>
             <Container>
-              {/*<Header searchName={searchName} handleChange={handleChange} /> */}
-              <SearchField
+              <Header
                 searchName={searchName}
                 handleChange={handleChange}
                 resultSearchPersons={resultSearchPersons}

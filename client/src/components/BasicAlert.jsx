@@ -3,7 +3,7 @@ import Stack from "@mui/material/Stack";
 
 // Material UI basic alert, want to have an alert when user searches for a name that is not in the db
 
-const BasicAlerts = ({ resultSearchPersons }) => {
+const BasicAlert = ({ resultSearchPersons }) => {
   if (resultSearchPersons?.data?.person.length === 0) {
     return (
       <Stack sx={{ width: "100%" }} spacing={2}>
@@ -13,4 +13,4 @@ const BasicAlerts = ({ resultSearchPersons }) => {
   }
 };
 
-export default BasicAlerts;
+export default BasicAlert;

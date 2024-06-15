@@ -1,6 +1,6 @@
 import { Stack, TextField } from "@mui/material";
 
-const SearchField = ({ searchName, handleChange }) => {
+const SearchField = ({ searchName, handleChange, resultSearchPersons }) => {
   //
   // error message when there is no name
   // if no name found resultSearchPersons.error is true
