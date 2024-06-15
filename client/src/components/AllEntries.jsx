@@ -29,20 +29,26 @@ const AllEntries = ({ searchName }) => {
   if (error) return <div>error...</div>;
 
   return (
-    <TableContainer component={Paper}>
-      <Table>
-        <TableBody>
-          {data?.allPersons?.map((person) => {
-            return (
-              <TableRow key={person.id}>
-                <TableCell>{person.name}</TableCell>
-                <TableCell>{person.phone}</TableCell>
-              </TableRow>
-            );
-          })}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <>
+      <TableContainer component={Paper}>
+        <Table role="table" aria-label="Phonebook">
+          <TableBody>
+            {data?.allPersons?.map((person, index) => {
+              return (
+                <TableRow
+                  key={person.id}
+                  role="row"
+                  aria-label={`Entry number ${index} name : ${person.name}, phone number: ${person.phone}`}
+                >
+                  <TableCell aria-label="name">{person.name}</TableCell>
+                  <TableCell aria-label="number">{person.phone}</TableCell>
+                </TableRow>
+              );
+            })}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </>
   );
 };
 

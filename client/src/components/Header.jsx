@@ -3,7 +3,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import ToggleButton from "./ToggleButton";
 import { useTheme } from "@mui/material/";
-import SearchPersons from "./SearchPerson";
+import SearchPersons from "./PersonTable";
 
 const Header = ({ searchName, handleChange }) => {
   const theme = useTheme();
@@ -11,6 +11,8 @@ const Header = ({ searchName, handleChange }) => {
   return (
     <>
       <AppBar
+        role="Header"
+        aria-label="Header of the webapp"
         position="sticky"
         style={
           theme.palette.mode === "dark"
@@ -19,12 +21,21 @@ const Header = ({ searchName, handleChange }) => {
         }
       >
         <Toolbar>
-          <Typography variant="h4" style={{ flexGrow: 1 }}>
+          <Typography
+            variant="h4"
+            style={{ flexGrow: 1 }}
+            role="title"
+            aria-label="Phonebook"
+          >
             Phonebook
           </Typography>
           <ToggleButton />
         </Toolbar>
-        <SearchPersons searchName={searchName} handleChange={handleChange} />
+        <SearchPersons
+          searchName={searchName}
+          handleChange={handleChange}
+          aria-label="search field"
+        />
       </AppBar>
     </>
   );

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React from "react";
-import SearchPersons from "./components/SearchPerson";
-import AllEntries from "./components/AllEntries";
+import SearchPersons from "./components/PersonTable";
+import PersonTable from "./components/PersonTable";
 import { Container } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { colors } from "@mui/material";
@@ -82,15 +82,9 @@ const App = () => {
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
           <CssBaseline>
-            <Container
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                flexWrap: "wrap",
-              }}
-            >
+            <Container>
               <Header searchName={searchName} handleChange={handleChange} />
-              <AllEntries searchName={searchName} />
+              <PersonTable searchName={searchName} />
             </Container>
           </CssBaseline>
         </ThemeProvider>

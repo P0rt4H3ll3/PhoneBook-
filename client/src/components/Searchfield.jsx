@@ -1,15 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import BasicAlerts from "./BasicAlert";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableRow,
-  Paper,
-  Stack,
-  TextField,
-} from "@mui/material";
+import { Stack, TextField } from "@mui/material";
 
 const SEARCH_PERSON = gql`
   query ($name: String) {
@@ -21,10 +12,10 @@ const SEARCH_PERSON = gql`
   }
 `;
 
-const SearchPersons = ({ searchName, handleChange }) => {
+const SearchField = ({ searchName, handleChange }) => {
   const resultSearchPersons = useQuery(SEARCH_PERSON, {
     variables: { name: searchName },
-    skip: !searchName, // if there is no searchName this display get skipped and all entries are displayed
+    //skip: !searchName, // i do not want it to be skipped
   });
 
   //
@@ -33,10 +24,12 @@ const SearchPersons = ({ searchName, handleChange }) => {
   // when there is no name than resultSearchPerson.data is Object { person:[]}
 
   return (
-    <div>
+    <>
       <>
         <Stack direction="row" spacing={1}>
           <TextField
+            role="search"
+            aria-label="Search field for names"
             position="sticky"
             label="Search"
             variant="filled"
@@ -52,23 +45,8 @@ const SearchPersons = ({ searchName, handleChange }) => {
         <BasicAlerts resultSearchPersons={resultSearchPersons} />
       </Stack>
       <Stack />
-      <TableContainer component={Paper}>
-        <Table>
-          <TableBody>
-            {resultSearchPersons.data?.person.map((data) => {
-              // resultSearchPersons.data? checks if this has data ?
-              return (
-                <TableRow key={data.id}>
-                  <TableCell>{data.name}</TableCell>
-                  <TableCell>{data.phone}</TableCell>
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </div>
+    </>
   );
 };
 
-export default SearchPersons;
+export default SearchField;
