@@ -3,7 +3,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import ToggleButton from "./ToggleButton";
 import { useTheme } from "@mui/material/";
-import SearchPersons from "./PersonTable";
+import SearchField from "./Searchfield";
 
 const Header = ({ searchName, handleChange }) => {
   const theme = useTheme();
@@ -31,7 +31,7 @@ const Header = ({ searchName, handleChange }) => {
           </Typography>
           <ToggleButton />
         </Toolbar>
-        <SearchPersons
+        <SearchField
           searchName={searchName}
           handleChange={handleChange}
           aria-label="search field"

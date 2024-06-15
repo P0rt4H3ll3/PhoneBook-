@@ -1,4 +1,3 @@
-import SearchField from "./Searchfield";
 import {
   Table,
   TableBody,
@@ -8,7 +7,7 @@ import {
   Paper,
 } from "@mui/material";
 
-const PersonTable = () => {
+const PersonTable = ({ resultSearchPersons }) => {
   //
   // error message when there is no name
   // if no name found resultSearchPersons.error is true
@@ -16,6 +15,7 @@ const PersonTable = () => {
 
   return (
     <>
+      <BasicAlerts resultSearchPersons={resultSearchPersons} />
       <TableContainer component={Paper} position="static">
         <Table
           role="Content table"

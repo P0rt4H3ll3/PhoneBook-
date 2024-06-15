@@ -10,7 +10,6 @@ const typeDefs = gql`
   }
 
   type Query {
-    allPersons: [Person!]!
     person(name: String): [Person!]
   }
 `;

@@ -1,13 +1,15 @@
 import { useState } from "react";
 import React from "react";
-import SearchPersons from "./components/PersonTable";
+
 import PersonTable from "./components/PersonTable";
 import { Container } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { colors } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
+import { gql, useQuery } from "@apollo/client";
 
-import Header from "./components/Header";
+//import Header from "./components/Header";
+import SearchField from "./components/Searchfield";
 
 export const ColorModeContext = React.createContext({
   //Context provides a way to pass data through the component tree without having to pass props down manually at every level.
@@ -15,9 +17,25 @@ export const ColorModeContext = React.createContext({
   toggleColorMode: () => {},
 });
 
+const SEARCH_PERSON = gql`
+  query ($name: String) {
+    person(name: $name) {
+      id
+      name
+      phone
+    }
+  }
+`;
+
 const App = () => {
   const [searchName, setSearchName] = useState("");
   const [mode, setMode] = React.useState("light");
+
+  const resultSearchPersons = useQuery(SEARCH_PERSON, {
+    variables: { name: searchName },
+    //skip: !searchName, // i do not want it to be skipped
+  });
+
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
@@ -83,8 +101,13 @@ const App = () => {
         <ThemeProvider theme={theme}>
           <CssBaseline>
             <Container>
-              <Header searchName={searchName} handleChange={handleChange} />
-              <PersonTable searchName={searchName} />
+              {/*<Header searchName={searchName} handleChange={handleChange} /> */}
+              <SearchField
+                searchName={searchName}
+                handleChange={handleChange}
+                resultSearchPersons={resultSearchPersons}
+              />
+              <PersonTable resultSearchPersons={resultSearchPersons} />
             </Container>
           </CssBaseline>
         </ThemeProvider>
