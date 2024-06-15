@@ -1,12 +1,12 @@
 import { useState } from "react";
 import React from "react";
-import SearchPersons from "./components/SearchPerson";
-import AllEntries from "./components/AllEntries";
+
+import PersonTable from "./components/PersonTable";
 import { Container } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { colors } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
-
+import { gql, useQuery } from "@apollo/client";
 import Header from "./components/Header";
 
 export const ColorModeContext = React.createContext({
@@ -15,9 +15,25 @@ export const ColorModeContext = React.createContext({
   toggleColorMode: () => {},
 });
 
+const SEARCH_PERSON = gql`
+  query ($name: String) {
+    person(name: $name) {
+      id
+      name
+      phone
+    }
+  }
+`;
+
 const App = () => {
   const [searchName, setSearchName] = useState("");
   const [mode, setMode] = React.useState("light");
+
+  const resultSearchPersons = useQuery(SEARCH_PERSON, {
+    variables: { name: searchName },
+    //skip: !searchName, // i do not want it to be skipped
+  });
+
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
@@ -82,15 +98,13 @@ const App = () => {
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
           <CssBaseline>
-            <Container
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                flexWrap: "wrap",
-              }}
-            >
-              <Header searchName={searchName} handleChange={handleChange} />
-              <AllEntries searchName={searchName} />
+            <Container>
+              <Header
+                searchName={searchName}
+                handleChange={handleChange}
+                resultSearchPersons={resultSearchPersons}
+              />
+              <PersonTable resultSearchPersons={resultSearchPersons} />
             </Container>
           </CssBaseline>
         </ThemeProvider>
