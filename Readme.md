@@ -114,9 +114,9 @@ To run the tests provided in this repository, follow these steps:
 
 The provided tests cover the following aspects of the application:
 
--End-to-end functionality of searching names and displaying results.
--Handling of single and multiple search results.
--Display of error messages when no matching entry is found.
--Correct display of all entries when the search input is empty.
+- End-to-end functionality of searching names and displaying results.
+- Handling of single and multiple search results.
+- Display of error messages when no matching entry is found.
+- Correct display of all entries when the search input is empty.
 
 
