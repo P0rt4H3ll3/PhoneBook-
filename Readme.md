@@ -88,6 +88,8 @@ Ensure you have the following installed on your system:
 
 ## Testing
 
+![test results](/img/tests.png "test results")
+
 ### Running Tests
 
 To run the tests provided in this repository, follow these steps:
