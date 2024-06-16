@@ -19,10 +19,10 @@ The app displays a list of results with the full name and phone number of the co
 ## Additional Feature
 
 - Dark and Light Mode
-  ![Dark Mode / Light Mode](/img/darkmode.gif "dark / ligth mode")
+![Dark Mode / Light Mode](/img/darkmode.gif "dark / ligth mode")
 
 - Error message if no match is found
-  ![Entry not found](/img/noEntry.png "no matches")
+![Entry not found](/img/noEntry.png "no matches")
 
 ## Technology Stack
 
