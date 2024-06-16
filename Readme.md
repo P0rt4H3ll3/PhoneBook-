@@ -11,18 +11,18 @@ The app displays a list of results with the full name and phone number of the co
 - Case-insensitive search
 - Real-time matching of search terms
 - Display of full names and phone numbers
-  ![search function](/img/searchFunction.gif "Search function")
+- ![search function](/img/searchFunction.gif "Search function")
 
 - Responsive user interface for various screen sizes
-  ![search function](/img/resize.gif "Search function")
+- ![search function](/img/resize.gif "Search function")
 
 ## Additional Feature
 
 - Dark and Light Mode
-![Dark Mode / Light Mode](/img/darkmode.gif "dark / ligth mode")
+- ![Dark Mode / Light Mode](/img/darkmode.gif "dark / ligth mode")
 
 - Error message if no match is found
-![Entry not found](/img/noEntry.png "no matches")
+- ![Entry not found](/img/noEntry.png "no matches")
 
 ## Technology Stack
 
