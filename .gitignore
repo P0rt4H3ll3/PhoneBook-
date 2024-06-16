@@ -63,7 +63,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/react,windows,visualstudiocode
-/test-results/
+/test-results/*.json
 /playwright-report/
 /blob-report/
 /playwright/.cache/

@@ -18,10 +18,9 @@ startStandaloneServer(server, {
   context: () => {
     // through the context the resolvers have access to the db
     // context only returns objects so i have to use Object.values() to return to Array
-    const context = db
+    return db
       .map((person) => ({ id: uuidv4(), ...person })) // i need to give the database entries unique ID´s
       .sort((a, b) => a.name.localeCompare(b.name)); // sorts db alphabetically
-    return context;
   },
 }).then(({ url }) => {
   console.log(`server ready at ${url}`);
