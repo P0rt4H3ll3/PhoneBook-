@@ -92,8 +92,6 @@ Ensure you have the following installed on your system:
 
 ## Testing
 
-<img src="/img/tests.png" width="600" >
-
 ### Running Tests
 
 To run the tests provided in this repository, follow these steps:
@@ -109,6 +107,7 @@ To run the tests provided in this repository, follow these steps:
    ```
 
    This command will execute the test suite and provide feedback on whether all tests passed successfully or if there are any failures or errors.
+<img src="/img/tests.png" width="600" >
 
 ## Test Coverage
 
