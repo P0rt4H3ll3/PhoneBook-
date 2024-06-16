@@ -11,7 +11,7 @@ The app displays a list of results with the full name and phone number of the co
 - Case-insensitive search
 - Real-time matching of search terms
 - Display of full names and phone numbers
-- ![search function | width = "100"](/img/searchFunction.gif "Search function")
+- ![search function | width = "500"](/img/searchFunction.gif "Search function")
 
 - Responsive user interface for various screen sizes
 - ![search function](/img/resize.gif "Search function" | width = 100)
