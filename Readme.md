@@ -119,10 +119,4 @@ The provided tests cover the following aspects of the application:
 -Display of error messages when no matching entry is found.
 -Correct display of all entries when the search input is empty.
 
-## Adding or Modifying Tests
 
-If you need to add or modify tests:
-
--Navigate to the tests directory and open the relevant test file (test_phoneapp.spec.js).
--Follow the structure and patterns used in existing tests to maintain consistency.
--Ensure tests are thorough and cover both expected and edge cases of the application's functionality.
