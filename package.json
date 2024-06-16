@@ -12,5 +12,9 @@
     "@playwright/test": "^1.44.1",
     "@types/node": "^20.14.2"
   },
-  "scripts": {}
+  "scripts": {
+    "test": "playwright test",
+    "server": "cd ./server && node index.js",
+    "start": "cd ./client && npm run dev"
+  }
 }
