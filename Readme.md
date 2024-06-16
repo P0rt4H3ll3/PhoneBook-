@@ -16,7 +16,7 @@ The app displays a list of results with the full name and phone number of the co
 
 - Responsive user interface for various screen sizes
 
-<img src="/img/resize.gif" width="300" >
+<img src="/img/resize.gif" width="600" >
 
 ## Additional Feature
 
@@ -92,7 +92,7 @@ Ensure you have the following installed on your system:
 
 ## Testing
 
-<img src="/img/tests.png" width="300" >
+<img src="/img/tests.png" width="600" >
 
 ### Running Tests
 
