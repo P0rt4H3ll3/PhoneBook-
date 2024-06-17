@@ -1,12 +1,13 @@
-import { useState } from "react";
-import React from "react";
-
-import PersonTable from "./components/PersonTable";
-import { Container } from "@mui/material";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { colors } from "@mui/material";
-import CssBaseline from "@mui/material/CssBaseline";
+import React, { useState, useMemo } from "react";
 import { gql, useQuery } from "@apollo/client";
+import {
+  Container,
+  ThemeProvider,
+  createTheme,
+  colors,
+  CssBaseline,
+} from "@mui/material";
+import PersonTable from "./components/PersonTable";
 import Header from "./components/Header";
 
 export const ColorModeContext = React.createContext({
@@ -29,12 +30,12 @@ const App = () => {
   const [searchName, setSearchName] = useState("");
   const [mode, setMode] = React.useState("light");
 
-  const resultSearchPersons = useQuery(SEARCH_PERSON, {
+  const { loading, data, error } = useQuery(SEARCH_PERSON, {
     variables: { name: searchName },
     //skip: !searchName, // i do not want it to be skipped
   });
 
-  const colorMode = React.useMemo(
+  const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {
         setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
@@ -42,7 +43,7 @@ const App = () => {
     }),
     []
   );
-  const theme = React.useMemo(
+  const theme = useMemo(
     // changes whenever the mode changes
     () =>
       createTheme({
@@ -97,16 +98,17 @@ const App = () => {
     <>
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
-          <CssBaseline>
-            <Container>
-              <Header
-                searchName={searchName}
-                handleChange={handleChange}
-                resultSearchPersons={resultSearchPersons}
-              />
-              <PersonTable resultSearchPersons={resultSearchPersons} />
-            </Container>
-          </CssBaseline>
+          <CssBaseline />
+          <Container>
+            <Header
+              searchName={searchName}
+              handleChange={handleChange}
+              data={data}
+            />
+            {error && <div>Error occurred...</div>}
+            {loading && <div>Loading...</div>}
+            {!loading && !error && <PersonTable data={data} />}
+          </Container>
         </ThemeProvider>
       </ColorModeContext.Provider>
     </>

@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import BasicAlert from "./BasicAlert";
 
-const PersonTable = ({ resultSearchPersons }) => {
+const PersonTable = ({ data }) => {
   //
   // error message when there is no name
   // if no name found resultSearchPersons.error is true
@@ -16,24 +16,23 @@ const PersonTable = ({ resultSearchPersons }) => {
 
   return (
     <>
-      <BasicAlert resultSearchPersons={resultSearchPersons} />
+      <BasicAlert data={data} />
       <TableContainer component={Paper} position="static">
-        <Table
-          role="Content table"
-          aria-label="Displays searched Phonebook entries"
-        >
+        <Table role="table" aria-label="Phonebook entries">
           <TableBody>
-            {resultSearchPersons.data?.person.map((data, index) => {
+            {data?.person.map((data, index) => {
               // resultSearchPersons.data? checks if this has data ?
               return (
                 <TableRow
                   key={data.id}
                   role="row"
-                  aria-label={`Entry number ${index} name : ${data.name}, phone number: ${data.phone}`}
+                  aria-label={`Entry number ${index + 1} name : ${
+                    data.name
+                  }, phone number: ${data.phone}`}
                   //ins label noch index von max rein machen
                 >
-                  <TableCell>{data.name}</TableCell>
-                  <TableCell>{data.phone}</TableCell>
+                  <TableCell role="cell">{data.name}</TableCell>
+                  <TableCell role="cell">{data.phone}</TableCell>
                 </TableRow>
               );
             })}

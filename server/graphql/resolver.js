@@ -1,4 +1,4 @@
-const Query = {
+const Resolver = {
   // access to the db through the context of apollo/server/standalone at main.jsx
   person: (root, { name }, context) => {
     // original db has no ids thats why i have to give them a unique
@@ -17,4 +17,8 @@ const Query = {
   },
 };
 
-export default Query;
+export default Resolver;
+
+// with larger db probably not efficient because of storing the data in memory
+// next step might be using a lightweight DBMS like Sqlite
+// if further grows consider MongoDB

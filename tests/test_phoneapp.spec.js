@@ -29,9 +29,9 @@ test.describe("Name to Search", () => {
       page,
       browserName,
     }) => {
-      test.skip(browserName === "webkit", "still working on this one ");
       const NAME_TO_SEARCH = "Ray Bloom"; // lenght of database array
       await page.getByLabel("Search", { exact: true }).fill(NAME_TO_SEARCH);
+      await page.waitForTimeout(1000); //wait for rows to appear after search
       const rows = await page.getByRole("row", { exact: true }).all();
       await expect(rows.length).toBe(1);
     });

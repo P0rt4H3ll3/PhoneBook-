@@ -5,13 +5,13 @@ import ToggleButton from "./ToggleButton";
 import { useTheme } from "@mui/material/";
 import SearchField from "./Searchfield";
 
-const Header = ({ searchName, handleChange, resultSearchPerson }) => {
+const Header = ({ searchName, handleChange, data }) => {
   const theme = useTheme();
 
   return (
     <>
       <AppBar
-        role="Header"
+        role="header"
         aria-label="Header of the webapp"
         position="sticky"
         style={
@@ -21,12 +21,7 @@ const Header = ({ searchName, handleChange, resultSearchPerson }) => {
         }
       >
         <Toolbar>
-          <Typography
-            variant="h4"
-            style={{ flexGrow: 1 }}
-            role="title"
-            aria-label="Phonebook"
-          >
+          <Typography variant="h4" style={{ flexGrow: 1 }}>
             Phonebook
           </Typography>
           <ToggleButton />
@@ -34,7 +29,7 @@ const Header = ({ searchName, handleChange, resultSearchPerson }) => {
         <SearchField
           searchName={searchName}
           handleChange={handleChange}
-          resultSearchPerson={resultSearchPerson}
+          data={data}
           aria-label="search field"
         />
       </AppBar>

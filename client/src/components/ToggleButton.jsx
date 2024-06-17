@@ -27,8 +27,9 @@ const ToggleButton = () => {
       >
         {theme.palette.mode} mode
         <IconButton
-          role="Button"
-          aria-label="Button that changes design form light to dark"
+          aria-label={`Toggle ${
+            theme.palette.mode === "dark" ? "light" : "dark"
+          } mode`}
           sx={{ ml: 1 }}
           onClick={colorMode.toggleColorMode}
           color="inherit" //color for the symbol

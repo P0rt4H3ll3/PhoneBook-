@@ -107,7 +107,7 @@ To run the tests provided in this repository, follow these steps:
    ```
 
    This command will execute the test suite and provide feedback on whether all tests passed successfully or if there are any failures or errors.
-<img src="/img/tests.png" width="600" >
+   <img src="/img/tests.png" width="600" >
 
 ## Test Coverage
 
@@ -117,5 +117,3 @@ The provided tests cover the following aspects of the application:
 - Handling of single and multiple search results.
 - Display of error messages when no matching entry is found.
 - Correct display of all entries when the search input is empty.
-
-
