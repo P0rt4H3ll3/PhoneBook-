@@ -5,7 +5,6 @@
   },
   "scripts": {
     "install-all": "npm run server-install && npm run client-install && npm run test-install",
-    "start": "npm run server && npm run client && console.log('open localhost:5173')",
     "test": "playwright test",
     "test-install": "npm install && npx playwright install",
     "server-install": "cd ./server && npm install",

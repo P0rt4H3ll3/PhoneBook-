@@ -55,8 +55,7 @@ Ensure you have the following installed on your system:
 2. **Install Dependecies:**
 
    ```bash
-   npm run server install
-   npm run client install
+   npm run install-all
    ```
 
 3. **Start the Backend Server**
@@ -70,7 +69,7 @@ Ensure you have the following installed on your system:
 4. **Start the Frontend**
 
    ```bash
-   npm run start
+   npm run client
    ```
 
    App runs on http://localhost:5173
