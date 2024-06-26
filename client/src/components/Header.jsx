@@ -2,7 +2,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import ToggleButton from "./ToggleButton";
-import { useTheme } from "@mui/material/";
+import { useTheme } from "@mui/material/styles";
 import SearchField from "./Searchfield";
 
 const Header = ({ searchName, handleChange, data }) => {
