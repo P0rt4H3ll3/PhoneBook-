@@ -14,7 +14,9 @@
   },
   "scripts": {
     "test": "playwright test",
+    "server install": "cd ./server && npm install",
     "server": "cd ./server && node index.js",
+    "client install": "cd ./client && npm install",
     "start": "cd ./client && npm run dev"
   }
 }

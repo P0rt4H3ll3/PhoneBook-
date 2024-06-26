@@ -1,7 +1,7 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import typeDefs from "./graphql/schema.js";
-import Resolver from "./graphql/resolver.js";
+import resolvers from "./graphql/resolver.js";
 import db from "./database/telefonbuch.json" assert { type: "json" }; // without assert {....} does not work.. dont know why
 import { v4 as uuidv4 } from "uuid"; // needed to generat unique ids
 
@@ -10,7 +10,7 @@ import { v4 as uuidv4 } from "uuid"; // needed to generat unique ids
 //
 const server = new ApolloServer({
   typeDefs,
-  resolvers: { Resolver },
+  resolvers,
 });
 
 startStandaloneServer(server, {

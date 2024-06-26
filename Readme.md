@@ -55,7 +55,8 @@ Ensure you have the following installed on your system:
 2. **Install Dependecies:**
 
    ```bash
-   npm install
+   npm run server install
+   npm run client install
    ```
 
 3. **Start the Backend Server**
