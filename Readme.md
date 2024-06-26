@@ -12,21 +12,21 @@ The app displays a list of results with the full name and phone number of the co
 - Real-time matching of search terms
 - Display of full names and phone numbers
 
-<img src="/img/searchFunction.gif" width="300" >
+<img src="/img/searchFunction.gif" width="300" alt="search Function">
 
 - Responsive user interface for various screen sizes
 
-<img src="/img/resize.gif" width="600" >
+<img src="/img/resize.gif" width="600" alt="App resizing" >
 
 ## Additional Feature
 
 - Dark and Light Mode
 
-<img src="/img/darkmode.gif" width="300" >
+<img src="/img/darkmode.gif" width="300" alt="Darkmode">
 
 - Error message if no match is found
 
-<img src="/img/noEntry.png" width="300" >
+<img src="/img/noEntry.png" width="300" alt="no Entry">
 
 ## Technology Stack
 
@@ -64,7 +64,7 @@ Ensure you have the following installed on your system:
    npm run server
    ```
 
-   server runs on http://localhost:4444
+   server runs on `http://localhost:4444`
 
 4. **Start the Frontend**
 
@@ -72,7 +72,7 @@ Ensure you have the following installed on your system:
    npm run client
    ```
 
-   App runs on http://localhost:5173
+   App runs on `http://localhost:5173`
 
 ## Usage
 
@@ -83,7 +83,7 @@ Ensure you have the following installed on your system:
 
 - `index.js`: The main server file setting up the Apollo Server and GraphQL API.
 - `graphql/schema.js`: Contains the GraphQL schema definitions.
-- `graphql/resolvers/Query.js`: Contains the query resolvers for fetching data from the JSON file.
+- `graphql/resolver.js`: Contains the query resolvers for fetching data from the JSON file.
 - `database/telefonbuch.json`: The static JSON file used as the data source.
 - `src/`: Contains the React frontend application.
   - `components/`: React components.
@@ -107,7 +107,7 @@ To run the tests provided in this repository, follow these steps:
    ```
 
    This command will execute the test suite and provide feedback on whether all tests passed successfully or if there are any failures or errors.
-   <img src="/img/tests.png" width="600" >
+   <img src="/img/tests.png" width="600" alt="run tests">
 
 ## Test Coverage
 
