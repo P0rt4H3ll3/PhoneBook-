@@ -1,6 +1,6 @@
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 import ToggleButton from "./ToggleButton";
 import { useTheme } from "@mui/material/";
 import SearchField from "./Searchfield";
