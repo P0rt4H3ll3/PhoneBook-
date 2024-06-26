@@ -4,11 +4,13 @@
     "@types/node": "^20.14.2"
   },
   "scripts": {
+    "install-all": "npm run server-install && npm run client-install && npm run test-install",
+    "start": "npm run server && npm run client && console.log('open localhost:5173')",
     "test": "playwright test",
     "test-install": "npm install && npx playwright install",
     "server-install": "cd ./server && npm install",
     "server": "cd ./server && node index.js",
     "client-install": "cd ./client && npm install",
-    "start": "cd ./client && npm run dev"
+    "client": "cd ./client && npm run dev"
   }
 }
