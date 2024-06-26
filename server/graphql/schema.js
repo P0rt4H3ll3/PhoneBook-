@@ -1,4 +1,4 @@
-import { gql } from "@apollo/server";
+import { gql } from "graphql-tag";
 //
 //typedefinitions how the data gets represented ?
 //
