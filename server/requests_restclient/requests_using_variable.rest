@@ -1,0 +1,20 @@
+POST http://localhost:4444/
+Content-Type: application/json
+
+{
+  "query": "query SearchPerson($name: String) { person(name: $name) { name phone id } }",
+  "variables": {
+    "name": "philip"
+  }
+}
+
+###
+POST http://localhost:4444/
+Content-Type: application/json
+
+{
+  "query": "query SearchPerson($name: String) { person(name: $name) { name phone id } }",
+  "variables": {
+    "name": "Abbigail Robles"
+  }
+}

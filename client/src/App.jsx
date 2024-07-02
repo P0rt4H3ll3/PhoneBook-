@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import {
   Container,
   ThemeProvider,
@@ -9,22 +9,13 @@ import {
 } from "@mui/material";
 import PersonTable from "./components/PersonTable";
 import Header from "./components/Header";
+import { SEARCH_PERSON } from "./graphql/queries";
 
 export const ColorModeContext = React.createContext({
   //Context provides a way to pass data through the component tree without having to pass props down manually at every level.
   //Call createContext outside of any components to create a context
   toggleColorMode: () => {},
 });
-
-const SEARCH_PERSON = gql`
-  query ($name: String) {
-    person(name: $name) {
-      id
-      name
-      phone
-    }
-  }
-`;
 
 const App = () => {
   const [searchName, setSearchName] = useState("");

@@ -1,0 +1,54 @@
+Apollo Server = graphql maker 
+
+could communicate between react and graphql using axios but better is apolloclient
+Apollo Client = Apollo Provider Client https://www.apollographql.com/docs/react/get-started/#connect-your-client-to-react
+
+The query is made by the App component
+use of the hook function useQuery , The useQuery hook is well-suited for situations where the query is done when the component is rendered.
+
+hook function useLazyQuery that would make it possible to define a query which is executed when the user wants to see the detailed information of a person.
+-------------------------------------------------------------------------------------------------------------------------------------
+
+you can put all queries :
+const ALL_PERSONS = gql`
+  query  {
+    allPersons  {
+      name
+      phone
+      id
+    }
+  }
+`
+into their own file queries.js  : 
+
+import { gql } from '@apollo/client'
+
+export const ALL_PERSONS = gql`
+  query {
+    // ...
+  }
+`
+export const FIND_PERSON = gql`
+  query findPersonByName($nameToSearch: String!) {
+    // ...
+
+  }
+`
+
+export const CREATE_PERSON = gql`
+  mutation createPerson($name: String!, $street: String!, $city: String!, $phone: String) {
+    // ...
+  }
+`
+---------------------------------------------------------------------------------------------------------------------------
+
+when Mutation to generate a new user, the new user is not immediatly reflected in getallusers 
+can use refetchQueries 
+
+const [ createPerson ] = useMutation(CREATE_PERSON, {
+    refetchQueries: [ { query: ALL_PERSONS } ]  })
+
+------------------------------------------------------------------------------------------------------------------------------
+
+creating mongoose and mongodb with database looks easier, define schema for name and number, connect to mongodb url with dotenv, resolvers with async and Person.find({}) for find all and Person.findOne({name: args.name})
+
