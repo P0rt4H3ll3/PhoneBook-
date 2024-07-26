@@ -49,7 +49,7 @@ Ensure you have the following installed on your system:
 1. **Enter Repository:**
 
    ```bash
-   cd ForGeoMagic
+   cd PhoneBook
    ```
 
 2. **Install Dependecies:**
